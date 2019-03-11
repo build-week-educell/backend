@@ -12,7 +12,7 @@ exports.up = function(knex) {
       student.string("insuranceCardexpires", 255);
       student.string("birthcertificate", 255).notNullable();
       student.string("specialneeds", 255).notNullable();
-      student.string("represenative", 255).notNullable();
+      student.string("representative", 255).notNullable();
       student.string("contactinfo", 255);
     });
   };

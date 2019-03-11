@@ -61,7 +61,7 @@ function student(req, res) {
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
-    represenative,
+    representative,
     contactinfo
   } = req.body;
 
@@ -72,10 +72,10 @@ function student(req, res) {
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
-    represenative,
+    representative,
     contactinfo
   };
-
+  // console.log(studentInfo);
   userDb("students")
     .insert(studentInfo)
     .then(ids => {
@@ -121,7 +121,7 @@ function studentUpdate(req,res){
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
-    represenative,
+    representative,
     contactinfo
   } = req.body;
 
@@ -132,7 +132,7 @@ function studentUpdate(req,res){
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
-    represenative,
+    representative,
     contactinfo
   };
   userDb('students').where({id:id}).update(studentInfo).then(async () => {
