@@ -16,7 +16,9 @@
     "pg": "^7.8.2",
     "sqlite3": "^4.0.6"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
