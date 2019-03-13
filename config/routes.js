@@ -17,13 +17,16 @@ module.exports = server => {
 
 function register(req, res) {
   // implement user registration
-  const { username, password } = req.body;
+  const { username, name, contactinfo, password, organization } = req.body;
 
   const hash = bcrypt.hashSync(password, 14);
 
   const userInfo = {
     username,
-    password: hash
+    name,
+    contactinfo,
+    password: hash,
+    organization
   };
 
   userDb("users")
@@ -56,8 +59,11 @@ function student(req, res) {
   // implement student registration
   const {
     name,
-    status,
+    grade,
+    background,
+    statusAtschool,
     age,
+    insuranceCard,
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
@@ -67,8 +73,11 @@ function student(req, res) {
 
   const studentInfo = {
     name,
-    status,
+    grade,
+    background,
+    statusAtschool,
     age,
+    insuranceCard,
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
@@ -116,8 +125,11 @@ function studentUpdate(req,res){
   const id  = req.params.id
   const {
     name,
-    status,
+    grade,
+    background,
+    statusAtschool,
     age,
+    insuranceCard,
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
@@ -127,8 +139,11 @@ function studentUpdate(req,res){
 
   const studentInfo = {
     name,
-    status,
+    grade,
+    background,
+    statusAtschool,
     age,
+    insuranceCard,
     insuranceCardexpires,
     birthcertificate,
     specialneeds,
