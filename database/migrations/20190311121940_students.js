@@ -9,7 +9,7 @@ exports.up = function(knex) {
       student.string("status", 255).notNullable();
       student.integer("age").notNullable();
       student.boolean("insurance").notNullable();
-      student.string("insuranceCardexpires", 255);
+      student.string("insuranceExp", 255);
       student.boolean("birthCertificate").notNullable();
       student.text("specialNeeds", 1500).notNullable();
       student.string("representative", 255).notNullable();
