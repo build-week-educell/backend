@@ -1,4 +1,3 @@
-const axios = require("axios");
 const bcrypt = require("bcryptjs");
 const userDb = require("../database/dbConfig.js");
 
@@ -17,14 +16,12 @@ module.exports = server => {
 
 function register(req, res) {
   // implement user registration
-  const { username, name, contactinfo, password, organization } = req.body;
-
+  const { username, name, contactInfo, password, organization } = req.body;
   const hash = bcrypt.hashSync(password, 14);
-
   const userInfo = {
     username,
     name,
-    contactinfo,
+    contactInfo,
     password: hash,
     organization
   };
@@ -61,30 +58,29 @@ function student(req, res) {
     name,
     grade,
     background,
-    statusAtschool,
+    status,
     age,
-    insuranceCard,
-    insuranceCardexpires,
-    birthcertificate,
-    specialneeds,
+    insurance,
+    insuranceExp,
+    birthCertificate,
+    specialNeeds,
     representative,
-    contactinfo
+    contactInfo
   } = req.body;
 
   const studentInfo = {
     name,
     grade,
     background,
-    statusAtschool,
+    status,
     age,
-    insuranceCard,
-    insuranceCardexpires,
-    birthcertificate,
-    specialneeds,
+    insurance,
+    insuranceExp,
+    birthCertificate,
+    specialNeeds,
     representative,
-    contactinfo
+    contactInfo
   };
-  // console.log(studentInfo);
   userDb("students")
     .insert(studentInfo)
     .then(ids => {
@@ -127,28 +123,28 @@ function studentUpdate(req,res){
     name,
     grade,
     background,
-    statusAtschool,
+    status,
     age,
-    insuranceCard,
-    insuranceCardexpires,
-    birthcertificate,
-    specialneeds,
+    insurance,
+    insuranceExp,
+    birthCertificate,
+    specialNeeds,
     representative,
-    contactinfo
+    contactInfo
   } = req.body;
 
   const studentInfo = {
     name,
     grade,
     background,
-    statusAtschool,
+    status,
     age,
-    insuranceCard,
-    insuranceCardexpires,
-    birthcertificate,
-    specialneeds,
+    insurance,
+    insuranceExp,
+    birthCertificate,
+    specialNeeds,
     representative,
-    contactinfo
+    contactInfo
   };
   userDb('students').where({id:id}).update(studentInfo).then(async () => {
     students = await userDb('students')
